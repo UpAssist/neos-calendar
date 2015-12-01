@@ -1,0 +1,25 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<article class="calendar-event">
+    <header>
+        <neos:contentElement.wrap node="{node}">
+            <h1>{neos:contentElement.editable(property: 'title')}</h1>
+            <dl>
+                <dt>Van:</dt>
+                <dd>{startDateTime -> f:format.date(format:'d-m-Y H:i')}</dd>
+                <dt>Tot:</dt>
+                <dd>{endDateTime -> f:format.date(format:'d-m-Y H:i')}</dd>
+            </dl>
+        </neos:contentElement.wrap>
+    </header>
+    <div class="content">
+        {main -> f:format.raw()}
+    </div>
+    <footer>
+        <ul {shareLinks.attributes -> f:format.raw()}>
+        <f:for each="{shareLinks.links}" as="link">
+            <li>{link -> f:format.raw()}</li>
+        </f:for>
+        </ul>
+    </footer>
+</article>

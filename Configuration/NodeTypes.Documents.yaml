@@ -1,0 +1,52 @@
+---
+
+'UpAssist.Neos.Calendar:Document':
+  abstract: TRUE
+  superTypes:
+    'TYPO3.Neos:Document': TRUE
+
+'UpAssist.Neos.Calendar:Event':
+  superTypes:
+    'UpAssist.Neos.Calendar:Document': TRUE
+    'TYPO3.Neos.NodeTypes:TitleMixin': TRUE
+  ui:
+    label: 'Event'
+    icon: 'icon-calendar'
+  childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    startDateTime:
+      type: DateTime
+      ui:
+        label: 'Start Date'
+        inspector:
+          group: 'document'
+          editorOptions:
+            format: 'd-m-Y H:i'
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        'TYPO3.Neos/Validation/DateTimeValidator': []
+      search:
+        elasticSearchMapping:
+          type: date
+          include_in_all: false
+          format: 'date_time_no_millis'
+        indexing: '${(node.properties.startDateTime ? Date.format(node.properties.startDateTime, "Y-m-d\TH:i:sP") : null)}'
+    endDateTime:
+      type: DateTime
+      ui:
+        label: 'End Date'
+        inspector:
+          group: 'document'
+          editorOptions:
+            format: 'd-m-Y H:i'
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        'TYPO3.Neos/Validation/DateTimeValidator': []
+      search:
+        elasticSearchMapping:
+          type: date
+          include_in_all: false
+          format: 'date_time_no_millis'
+        indexing: '${(node.properties.endDateTime ? Date.format(node.properties.endDateTime, "Y-m-d\TH:i:sP") : null)}'
