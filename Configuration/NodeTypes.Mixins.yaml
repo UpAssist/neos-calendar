@@ -1,1 +1,23 @@
 ---
+
+'UpAssist.Neos.Calendar:AbstractBaseMixin':
+  abstract: true
+  ui:
+    inspector:
+      groups:
+        event:
+          label: 'Event options'
+          position: 100
+
+'UpAssist.Neos.Calendar:LocationMixin':
+  superTypes:
+    'UpAssist.Neos.Calendar:AbstractBaseMixin': true
+  properties:
+    location:
+      type: string
+      inlineEditable: true
+      ui:
+        label: 'Location'
+        inspector:
+          group: 'event'
+          position: 30

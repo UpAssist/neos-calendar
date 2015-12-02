@@ -7,8 +7,9 @@
 
 'UpAssist.Neos.Calendar:Event':
   superTypes:
-    'UpAssist.Neos.Calendar:Document': TRUE
-    'TYPO3.Neos.NodeTypes:TitleMixin': TRUE
+    'UpAssist.Neos.Calendar:Document': true
+    'UpAssist.Neos.Calendar:LocationMixin': true
+    'TYPO3.Neos.NodeTypes:TitleMixin': true
   ui:
     label: 'Event'
     icon: 'icon-calendar'
@@ -21,7 +22,8 @@
       ui:
         label: 'Start Date'
         inspector:
-          group: 'document'
+          group: 'event'
+          position: 10
           editorOptions:
             format: 'd-m-Y H:i'
       validation:
@@ -38,7 +40,8 @@
       ui:
         label: 'End Date'
         inspector:
-          group: 'document'
+          group: 'event'
+          position: 20
           editorOptions:
             format: 'd-m-Y H:i'
       validation:

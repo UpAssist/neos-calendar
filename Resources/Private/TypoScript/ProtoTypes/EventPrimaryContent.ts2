@@ -11,6 +11,7 @@ prototype(UpAssist.Neos.Calendar:Event) {
     title = ${q(node).property('title')}
     startDateTime = ${q(node).property('startDateTime')}
     endDateTime = ${q(node).property('endDateTime')}
+    location = ${q(node).property('location')}
 
     main = TYPO3.Neos:ContentCollection {
         nodePath = 'main'
