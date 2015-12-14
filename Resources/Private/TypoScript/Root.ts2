@@ -1,2 +1,2 @@
 include: ProtoTypes/**/*
-#include: ContentTypes/**/*
+include: ContentTypes/**/*

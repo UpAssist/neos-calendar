@@ -1,0 +1,27 @@
+---
+
+'UpAssist.Neos.Calendar:Upcoming':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos.NodeTypes:TitleMixin': true
+  ui:
+    label: 'Upcoming Events'
+    inspector:
+      groups:
+        options:
+          label: 'Options'
+  properties:
+    showMoreEventsButton:
+      type: boolean
+      ui:
+        label: 'Show more events button'
+        reloadIfChanged: true
+        inspector:
+          group: 'options'
+    calendarPage:
+      type: reference
+      ui:
+        label: 'Calender page'
+        reloadIfChanged: true
+        inspector:
+          group: 'options'

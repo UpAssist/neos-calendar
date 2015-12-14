@@ -1,0 +1,20 @@
+prototype(UpAssist.Neos.Calendar:Upcoming) {
+    templatePath = 'resource://UpAssist.Neos.Calendar/Private/Templates/ContentTypes/Upcoming.html'
+
+    showMoreEventsButton = ${q(node).property('showMoreEventsButton')}
+    calendarPage = ${q(node).property('calendarPage')}
+    title = ${q(node).property('title')}
+
+    items = TYPO3.TypoScript:Collection {
+        collection = ${q(site).find('[instanceof UpAssist.Neos.Calendar:Event]') ? q(site).find('[instanceof UpAssist.Neos.Calendar:Event]').sort('startDateTime', 'ASC').slice(0, 4) : null}
+        itemName = 'node'
+        iterationName = 'iterator'
+        itemRenderer = TYPO3.TypoScript:Template {
+            templatePath = 'resource://UpAssist.Neos.Calendar/Private/Templates/ContentTypes/Upcoming.html'
+            sectionName = 'item'
+            node = ${node}
+            iterator = ${iterator}
+            intro = ${String.crop(String.stripTags(q(node).find('[instanceof TYPO3.Neos.NodeTypes:TextMixin]').first().property('text')), 150, '&hellip;')}
+        }
+    }
+}

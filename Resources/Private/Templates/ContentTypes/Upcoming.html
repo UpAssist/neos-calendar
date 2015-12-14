@@ -1,0 +1,27 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{neos:contentElement.editable(property: 'title')}
+<f:if condition="{items}">
+    <f:then>
+        <ul class="no-bullet upcoming-events">
+            {items -> f:format.raw()}
+        </ul>
+        <f:if condition="{showMoreEventsButton}">
+            <neos:link.node node="{calendarPage}">
+                Complete agenda <i class="fa fa-chevron-right"></i>
+            </neos:link.node>
+        </f:if>
+    </f:then>
+    <f:else>
+        <p>Sorry, we couldn't find any events.</p>
+    </f:else>
+</f:if>
+
+<f:section name="item">
+    <li>
+        <strong>{node.properties.startDateTime -> f:format.date(format: 'd-m-Y')}</strong>
+        <neos:link.node node="{node}" class="latest-events-readmore">
+            {node.properties.title}
+        </neos:link.node>
+        {intro -> f:format.raw()}
+    </li>
+</f:section>
