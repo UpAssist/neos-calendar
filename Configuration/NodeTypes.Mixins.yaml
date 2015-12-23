@@ -9,7 +9,7 @@
           position: 100
 'UpAssist.Neos.Calendar:LocationMixin':
   superTypes:
-    'UpAssist.Neos.Calendar:AbstractBaseMixin': '1'
+    'UpAssist.Neos.Calendar:AbstractBaseMixin': true
   properties:
     location:
       type: string

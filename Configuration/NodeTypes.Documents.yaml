@@ -2,12 +2,12 @@
 'UpAssist.Neos.Calendar:Document':
   abstract: true
   superTypes:
-    'TYPO3.Neos:Document': '1'
+    'TYPO3.Neos:Document': true
 'UpAssist.Neos.Calendar:Event':
   superTypes:
-    'UpAssist.Neos.Calendar:Document': '1'
-    'UpAssist.Neos.Calendar:LocationMixin': '1'
-    'TYPO3.Neos.NodeTypes:TitleMixin': '1'
+    'UpAssist.Neos.Calendar:Document': true
+    'UpAssist.Neos.Calendar:LocationMixin': true
+    'TYPO3.Neos.NodeTypes:TitleMixin': true
   ui:
     label: Event
     icon: icon-calendar
