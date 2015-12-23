@@ -17,9 +17,9 @@
     </div>
     <footer>
         <ul {shareLinks.attributes -> f:format.raw()}>
-        <f:for each="{shareLinks.links}" as="link">
-            <li>{link -> f:format.raw()}</li>
-        </f:for>
+            <f:for each="{shareLinks.links}" as="link">
+                <li>{link -> f:format.raw()}</li>
+            </f:for>
         </ul>
     </footer>
 </article>
