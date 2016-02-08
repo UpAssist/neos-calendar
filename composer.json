@@ -4,7 +4,7 @@
   "description": "A Neos Calendar package",
   "require": {
     "typo3/neos": "*",
-    "hising/ics-generator": "dev-master"
+    "eluceo/ical": "*"
   },
   "autoload": {
     "psr-0": {
