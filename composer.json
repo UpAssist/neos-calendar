@@ -3,7 +3,8 @@
   "type": "typo3-flow-package",
   "description": "A Neos Calendar package",
   "require": {
-    "typo3/neos": "*"
+    "typo3/neos": "*",
+    "hising/ics-generator": "dev-master"
   },
   "autoload": {
     "psr-0": {
