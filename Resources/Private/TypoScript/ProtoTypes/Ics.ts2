@@ -1,0 +1,26 @@
+# Define a path for rendering the vcard format
+ics = TYPO3.TypoScript:Case {
+    event {
+        condition = ${q(node).is('[instanceof UpAssist.Neos.Calendar:Event]')}
+        type = 'UpAssist.Neos.Calendar:Ics'
+    }
+}
+
+# Define a prototype to render a Person document as a vcard
+prototype(UpAssist.Neos.Calendar:Ics) < prototype(TYPO3.TypoScript:Http.Message) {
+    # Set the Content-Type header
+    httpResponseHead {
+        headers.Content-Type = 'text/calendar;charset=utf-8'
+    }
+    content = UpAssist.Neos.Calendar:Event {
+        templatePath = 'resource://UpAssist.Neos.Calendar/Private/Templates/Prototypes/Ics.html'
+        organizer = ${Configuration.setting('UpAssist.Neos.Calendar.ics.organizer.name')}
+        organizerEmail = ${Configuration.setting('UpAssist.Neos.Calendar.ics.organizer.email')}
+        identifier = ${q(node).property('_identifier')}
+        location = ${q(node).property('location')}
+        startDateTime = ${q(node).property('startDateTime')}
+        endDateTime = ${q(node).property('endDateTime')}
+        title = ${q(node).property('title')}
+    }
+}
+

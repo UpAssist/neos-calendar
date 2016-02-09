@@ -1,0 +1,13 @@
+{namespace upassist=UpAssist\Neos\Calendar\ViewHelpers}BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+BEGIN:VEVENT
+UID:{identifier}
+DTSTAMP:{startDateTime -> upassist:format.icsDate()}
+ORGANIZER;CN={organizer}:MAILTO:{organizerEmail}
+LOCATION:{location}
+DTSTART:{startDateTime -> upassist:format.icsDate()}
+DTEND:{endDateTime -> upassist:format.icsDate()}
+SUMMARY:{title}
+END:VEVENT
+END:VCALENDAR

@@ -3,3 +3,11 @@ TYPO3:
     typoScript:
       autoInclude:
         'UpAssist.Neos.Calendar': TRUE
+
+UpAssist:
+  Neos:
+    Calendar:
+      ics:
+        organizer:
+          name: UpAssist
+          email: office@upassist.com
