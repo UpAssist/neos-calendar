@@ -3,7 +3,10 @@ TYPO3:
     typoScript:
       autoInclude:
         'UpAssist.Neos.Calendar': TRUE
-
+    userInterface:
+      translation:
+        autoInclude:
+          'UpAssist.Neos.Calendar': ['Main', 'Inspector', 'Modules', 'NodeTypes/*']
 UpAssist:
   Neos:
     Calendar:

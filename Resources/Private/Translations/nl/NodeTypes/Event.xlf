@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="UpAssist.Neos.Calendar" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+                <source>Event</source>
+                <target>Evenement</target>
+            </trans-unit>
+            <trans-unit id="groups.event" xml:space="preserve">
+                <source>Event details</source>
+                <target>Evenement details</target>
+            </trans-unit>
+            <trans-unit id="properties.startDateTime" xml:space="preserve">
+                <source>Start date/time</source>
+                <target>Start datum/tijd</target>
+            </trans-unit>
+            <trans-unit id="properties.endDateTime" xml:space="preserve">
+                <source>End date/time</source>
+                <target>Eind datum/tijd</target>
+            </trans-unit>
+            <trans-unit id="properties.targetAudience" xml:space="preserve">
+                <source>Target audience</source>
+                <target>Doelgroep</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

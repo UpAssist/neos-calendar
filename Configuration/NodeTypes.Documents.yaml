@@ -9,7 +9,7 @@
     'UpAssist.Neos.Calendar:LocationMixin': true
     'TYPO3.Neos.NodeTypes:TitleMixin': true
   ui:
-    label: Event
+    label: i18n
     icon: icon-calendar
   childNodes:
     main:
@@ -18,7 +18,7 @@
     startDateTime:
       type: DateTime
       ui:
-        label: 'Start Date'
+        label: i18n
         inspector:
           group: event
           position: 10
@@ -36,7 +36,7 @@
     endDateTime:
       type: DateTime
       ui:
-        label: 'End Date'
+        label: i18n
         inspector:
           group: event
           position: 20
@@ -51,3 +51,12 @@
           include_in_all: false
           format: date_time_no_millis
         indexing: '${(node.properties.endDateTime ? Date.format(node.properties.endDateTime, "Y-m-d\TH:i:sP") : null)}'
+    targetAudience:
+      type: string
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: event
+          position: 5
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
