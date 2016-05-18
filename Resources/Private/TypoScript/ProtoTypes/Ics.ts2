@@ -13,7 +13,7 @@ prototype(UpAssist.Neos.Calendar:Ics) < prototype(TYPO3.TypoScript:Http.Message)
         headers.Content-Type = 'text/calendar;charset=utf-8'
     }
     content = UpAssist.Neos.Calendar:Event {
-        templatePath = 'resource://UpAssist.Neos.Calendar/Private/Templates/Prototypes/Ics.html'
+        templatePath = 'resource://UpAssist.Neos.Calendar/Private/Templates/ProtoTypes/Ics.html'
         organizer = ${Configuration.setting('UpAssist.Neos.Calendar.ics.organizer.name')}
         organizerEmail = ${Configuration.setting('UpAssist.Neos.Calendar.ics.organizer.email')}
         identifier = ${q(node).property('_identifier')}
