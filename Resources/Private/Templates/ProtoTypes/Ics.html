@@ -8,6 +8,6 @@ ORGANIZER;CN={organizer}:MAILTO:{organizerEmail}
 LOCATION:{location}
 DTSTART:{startDateTime -> upassist:format.icsDate()}
 DTEND:{endDateTime -> upassist:format.icsDate()}
-SUMMARY:{title}
+SUMMARY:{title -> f:format.raw()}
 END:VEVENT
 END:VCALENDAR
