@@ -3,11 +3,11 @@
     "type": "typo3-flow-package",
     "description": "A Neos Calendar package",
     "require": {
-        "typo3/neos": "*"
+        "neos/neos": "*"
     },
     "autoload": {
-        "psr-0": {
-            "UpAssist\\Neos\\Calendar": "Classes"
+        "psr-4": {
+            "UpAssist\\Neos\\Calendar\\": "Classes"
         }
     },
     "extra": {
