@@ -1,12 +1,17 @@
-TYPO3:
+Neos:
   Neos:
-    typoScript:
+    fusion:
       autoInclude:
         'UpAssist.Neos.Calendar': TRUE
     userInterface:
       translation:
         autoInclude:
           'UpAssist.Neos.Calendar': ['Main', 'Inspector', 'Modules', 'NodeTypes/*']
+  Flow:
+    mvc:
+      routes:
+        UpAssist.Neos.Calendar: true
+
 UpAssist:
   Neos:
     Calendar:
