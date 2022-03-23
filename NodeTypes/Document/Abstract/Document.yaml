@@ -1,0 +1,4 @@
+'UpAssist.Neos.Calendar:Document':
+  abstract: true
+  superTypes:
+    'TYPO3.Neos:Document': true

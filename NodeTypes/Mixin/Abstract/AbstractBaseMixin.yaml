@@ -1,0 +1,8 @@
+'UpAssist.Neos.Calendar:AbstractBaseMixin':
+  abstract: true
+  ui:
+    inspector:
+      groups:
+        event:
+          label: 'Event options'
+          position: 100
