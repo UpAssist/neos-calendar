@@ -2,13 +2,13 @@
   superTypes:
     'UpAssist.Neos.Calendar:Document': true
     'UpAssist.Neos.Calendar:LocationMixin': true
-    'TYPO3.Neos.NodeTypes:TitleMixin': true
+    'Neos.NodeTypes:TitleMixin': true
   ui:
     label: i18n
     icon: icon-calendar
   childNodes:
     main:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   properties:
     startDateTime:
       type: DateTime
@@ -25,7 +25,7 @@
       search:
         elasticSearchMapping:
           type: date
-          include_in_all: false
+
           format: date_time_no_millis
         indexing: '${(node.properties.startDateTime ? Date.format(node.properties.startDateTime, "Y-m-d\TH:i:sP") : null)}'
     endDateTime:
@@ -43,7 +43,7 @@
       search:
         elasticSearchMapping:
           type: date
-          include_in_all: false
+
           format: date_time_no_millis
         indexing: '${(node.properties.endDateTime ? Date.format(node.properties.endDateTime, "Y-m-d\TH:i:sP") : null)}'
     targetAudience:
