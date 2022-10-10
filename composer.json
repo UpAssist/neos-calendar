@@ -1,6 +1,6 @@
 {
     "name": "upassist/neos-calendar",
-    "type": "typo3-flow-package",
+    "type": "neos-package",
     "description": "A Neos Calendar package",
     "require": {
         "neos/neos": "*"
