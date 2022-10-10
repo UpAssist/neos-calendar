@@ -2,11 +2,11 @@
   name: 'Neos :: Frontend :: Event node in ics format'
   uriPattern: '{node}.ics'
   defaults:
-    '@package': TYPO3.Neos
+    '@package': Neos.Neos
     '@controller': Frontend\Node
     '@action': show
     '@format': ics
   routeParts:
     node:
-      handler: TYPO3\Neos\Routing\FrontendNodeRoutePartHandlerInterface
+      handler: Neos\Neos\Routing\FrontendNodeRoutePartHandlerInterface
   appendExceedingArguments: true
