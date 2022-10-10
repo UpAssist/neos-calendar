@@ -1,13 +1,13 @@
 {
   "name": "upassist-neos-calendar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "git@bitbucket.org:upassist/upassist-neos-calendar.git",
   "author": "Henjo Hoeksma <henjo@upassist.com>",
   "license": "MIT",
-    "scripts": {
-        "release:patch": "npx standard-version -t '' -r patch && git push --follow-tags origin master",
-        "release:major": "npx standard-version -t '' -r major && git push --follow-tags origin master",
-        "release:minor": "npx standard-version -t '' -r minor && git push --follow-tags origin master"
-    }
+  "scripts": {
+    "release:patch": "npx standard-version -t '' -r patch && git push --follow-tags origin master",
+    "release:major": "npx standard-version -t '' -r major && git push --follow-tags origin master",
+    "release:minor": "npx standard-version -t '' -r minor && git push --follow-tags origin master"
+  }
 }
