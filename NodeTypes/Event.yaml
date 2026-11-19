@@ -2,7 +2,7 @@
   superTypes:
     'UpAssist.Neos.Calendar:Document': true
     'UpAssist.Neos.Calendar:LocationMixin': true
-    'Neos.NodeTypes:TitleMixin': true
+    'Neos.NodeTypes.BaseMixins:TitleMixin': true
   ui:
     label: i18n
     icon: icon-calendar
@@ -20,8 +20,8 @@
           editorOptions:
             format: 'd-m-Y H:i'
       validation:
-        TYPO3.Neos/Validation/NotEmptyValidator: {  }
-        TYPO3.Neos/Validation/DateTimeValidator: {  }
+        Neos.Neos/Validation/NotEmptyValidator: {  }
+        Neos.Neos/Validation/DateTimeValidator: {  }
       search:
         elasticSearchMapping:
           type: date
@@ -38,8 +38,8 @@
           editorOptions:
             format: 'd-m-Y H:i'
       validation:
-        TYPO3.Neos/Validation/NotEmptyValidator: {  }
-        TYPO3.Neos/Validation/DateTimeValidator: {  }
+        Neos.Neos/Validation/NotEmptyValidator: {  }
+        Neos.Neos/Validation/DateTimeValidator: {  }
       search:
         elasticSearchMapping:
           type: date
@@ -54,4 +54,4 @@
         inspector:
           group: event
           position: 5
-          editor: TYPO3.Neos/Inspector/Editors/TextAreaEditor
+          editor: Neos.Neos/Inspector/Editors/TextAreaEditor

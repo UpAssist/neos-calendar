@@ -1,66 +1,65 @@
-prototype(TYPO3.Neos:PrimaryContent).Event {
+prototype(Neos.Neos:PrimaryContent).calendarEvent {
     @position = 'start'
     condition = ${q(documentNode).is('[instanceof UpAssist.Neos.Calendar:Event]')}
-    type = 'UpAssist.Neos.Calendar:Event'
+    renderer = UpAssist.Neos.Calendar:EventContent
 }
 
-prototype(UpAssist.Neos.Calendar:Event) {
+# Renders the primary content of an Event document. The document itself keeps
+# the site's page rendering: a prototype named after the document NodeType
+# would replace the whole page.
+prototype(UpAssist.Neos.Calendar:EventContent) < prototype(Neos.Fusion:Template) {
     templatePath = 'resource://UpAssist.Neos.Calendar/Private/Templates/DocumentTypes/Event.html'
 
-    node = ${node}
-    title = ${q(node).property('title')}
-    startDateTime = ${q(node).property('startDateTime')}
-    endDateTime = ${q(node).property('endDateTime')}
-    location = ${q(node).property('location')}
+    node = ${documentNode}
+    title = ${q(documentNode).property('title')}
+    startDateTime = ${q(documentNode).property('startDateTime')}
+    endDateTime = ${q(documentNode).property('endDateTime')}
+    location = ${q(documentNode).property('location')}
 
     main = Neos.Neos:ContentCollection {
         nodePath = 'main'
     }
 
-    shareLinks = TYPO3.TypoScript:RawArray {
-        @override.link = TYPO3.Neos:NodeUri {
-            absolute = TRUE
+    shareLinks = Neos.Fusion:DataStructure {
+        @context.link = Neos.Neos:NodeUri {
+            node = ${documentNode}
+            absolute = true
         }
 
-        attributes = TYPO3.TypoScript:Attributes {
-            class = TYPO3.TypoScript:RawArray {
-                identifier = 'calendar-share-links'
-                display = 'list-inline'
-            }
-        }
+        attributes = 'class="calendar-share-links list-inline"'
 
-        links = TYPO3.TypoScript:RawArray {
-            twitter = TYPO3.TypoScript:Tag {
+        links = Neos.Fusion:DataStructure {
+            twitter = Neos.Fusion:Tag {
                 tagName = 'a'
                 attributes.href = ${'https://twitter.com/home?status=' + link}
                 content = '<i class="fa fa-twitter fa-lg"></i>'
             }
 
-            facebook = TYPO3.TypoScript:Tag {
+            facebook = Neos.Fusion:Tag {
                 tagName = 'a'
                 attributes.href = ${'https://www.facebook.com/sharer/sharer.php?u=' + link}
                 content = '<i class="fa fa-facebook fa-lg"></i>'
             }
 
-            googlePlus = TYPO3.TypoScript:Tag {
+            googlePlus = Neos.Fusion:Tag {
                 tagName = 'a'
                 attributes.href = ${'https://plus.google.com/share?url=' + link}
                 content = '<i class="fa fa-google-plus fa-lg"></i>'
             }
 
-            linkedIn = TYPO3.TypoScript:Tag {
+            linkedIn = Neos.Fusion:Tag {
                 tagName = 'a'
                 attributes.href = ${'https://www.linkedin.com/shareEvent?mini=true&url=' + link + '&title=&summary=&source='}
                 content = '<i class="fa fa-linkedin fa-lg"></i>'
             }
 
-            pinterest = TYPO3.TypoScript:Tag {
+            pinterest = Neos.Fusion:Tag {
                 tagName = 'a'
                 attributes.href = ${'https://pinterest.com/pin/create/button/?url=&media=' + link + '&description='}
                 content = '<i class="fa fa-pinterest fa-lg"></i>'
             }
 
-            email = TYPO3.TypoScript:Tag {
+            email = Neos.Fusion:Tag {
                 tagName = 'a'
                 attributes.href = ${'mailto:?&subject=&body=' + link}
                 content = '<i class="fa fa-paper-plane fa-lg"></i>'
