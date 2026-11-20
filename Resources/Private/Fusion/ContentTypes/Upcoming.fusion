@@ -5,8 +5,10 @@ prototype(UpAssist.Neos.Calendar:Upcoming) < prototype(Neos.Neos:Content) {
     calendarPage = ${q(node).property('calendarPage')}
     title = ${q(node).property('title')}
 
+    @context.events = ${q(site).find('[instanceof UpAssist.Neos.Calendar:Event]').sort('startDateTime', 'ASC').slice(0, 4).get()}
+
     items = Neos.Fusion:Loop {
-        items = ${q(site).find('[instanceof UpAssist.Neos.Calendar:Event]').sort('startDateTime', 'ASC').slice(0, 4).get()}
+        items = ${events}
         itemName = 'node'
         iterationName = 'iterator'
         itemRenderer = Neos.Fusion:Template {
@@ -15,6 +17,23 @@ prototype(UpAssist.Neos.Calendar:Upcoming) < prototype(Neos.Neos:Content) {
             node = ${node}
             iterator = ${iterator}
             intro = ${String.crop(String.stripTags(q(node).find('[instanceof Neos.NodeTypes.BaseMixins:TextMixin]').first().property('text')), 150, '&hellip;')}
+        }
+    }
+
+    # The events live elsewhere in the site, so this element gets its own cache
+    # entry, flushed when any event changes (create, edit, move, delete) or
+    # when content inside one of the listed events changes (the intro text).
+    @cache {
+        mode = 'cached'
+        entryIdentifier {
+            node = ${node}
+        }
+        entryTags {
+            1 = ${Neos.Caching.nodeTag(node)}
+            2 = ${Neos.Caching.descendantOfTag(node)}
+            3 = ${Neos.Caching.nodeTypeTag('UpAssist.Neos.Calendar:Event', node)}
+            4 = ${Neos.Caching.descendantOfTag(events)}
+            5 = ${q(node).property('calendarPage') ? Neos.Caching.nodeTag(q(node).property('calendarPage')) : null}
         }
     }
 }
