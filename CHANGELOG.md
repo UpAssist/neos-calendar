@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.0.3](https://github.com/UpAssist/neos-calendar/compare/8.0.2...8.0.3) (2026-11-23)
+
+### Bug Fixes
+
+* remove the Google+ share link from event pages; Google+ was shut down in 2019 and the link led nowhere
+
 ### [8.0.2](https://github.com/UpAssist/neos-calendar/compare/8.0.1...8.0.2) (2026-11-20)
 
 ### Bug Fixes
