@@ -8,7 +8,7 @@ This package is no longer actively developed. It is kept working on Neos 8.
 
 | Version | Neos |
 | --- | --- |
-| 8.0.1 | 8.3, 8.4 (tested) |
+| 8.0.1 – 8.0.3 | 8.3, 8.4 (tested) |
 | 8.0.0 and older | not working on current Neos (removed `TYPO3.*` names) |
 
 Neos 9 is not supported: the `.ics` route uses the Neos 8 routing API and Neos 9 has no `Neos.Neos:PrimaryContent` case. That would need a separate major.
