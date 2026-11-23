@@ -41,12 +41,6 @@ prototype(UpAssist.Neos.Calendar:EventContent) < prototype(Neos.Fusion:Template)
                 content = '<i class="fa fa-facebook fa-lg"></i>'
             }
 
-            googlePlus = Neos.Fusion:Tag {
-                tagName = 'a'
-                attributes.href = ${'https://plus.google.com/share?url=' + link}
-                content = '<i class="fa fa-google-plus fa-lg"></i>'
-            }
-
             linkedIn = Neos.Fusion:Tag {
                 tagName = 'a'
                 attributes.href = ${'https://www.linkedin.com/shareEvent?mini=true&url=' + link + '&title=&summary=&source='}
